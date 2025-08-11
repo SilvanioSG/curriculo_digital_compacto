@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Resumo de Currículo Profissional – Silvanio Gois</title>
   <style>
     body {
@@ -20,6 +20,9 @@
       text-align: center;
       background: #e0e0e0;
       padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     nav button {
       background-color: #27628d;
@@ -29,6 +32,10 @@
       padding: 10px 20px;
       cursor: pointer;
       border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav button:hover {
+      background-color: #1e4970;
     }
     section {
       padding: 20px;
@@ -99,6 +106,7 @@
   </header>
 
   <nav>
+    <button onclick="location.href='#videoAutoentrevista'">Apresentação</button>
     <button onclick="location.href='#kpis'">KPIs</button>
     <button onclick="location.href='#grafico'">Competências</button>
     <button onclick="location.href='#experiencia'">Experiência</button>
@@ -108,7 +116,15 @@
 
   <section id="perfil">
     <h2>Perfil Profissional</h2>
-    <p>Tenho sólida experiência administrativa e técnica, atuando em setores estratégicos como construção civil, logística e petróleo e gás. Minha trajetória profissional mostra uma evolução comprovada de funções operacionais para posições de liderança, com foco em orçamentação, planejamento de obras, compras e gestão de pessoas. Possuo forte habilidade em análise de dados e tomada de decisão, com destaque para o uso de ferramentas digitais que otimizam processos e reduzem custos.</p>
+    <p>Profissional com sólida experiência administrativa e técnica, atuando em setores estratégicos como construção civil, logística e petróleo e gás. Evolução comprovada de funções operacionais a posições de liderança, com foco em orçamentação, planejamento de obras, compras e gestão de pessoas. Forte habilidade em análise de dados e tomada de decisão, com destaque para o uso de ferramentas digitais para otimização de processos e redução de custos.</p>
+  </section>
+
+  <section id="videoAutoentrevista" style="max-width: 640px; margin: 30px auto; text-align: center;">
+    <h2>Apresentação Digital Interativa</h2>
+    <video width="100%" height="360" controls>
+      <source src="videoAutoentrevista.mp4" type="video/mp4" />
+      Seu navegador não suporta a reprodução de vídeo.
+    </video>
   </section>
 
   <section id="kpis">
@@ -148,29 +164,29 @@
         <tr>
           <td>Orçamentista e Planejador</td>
           <td>Elaboração de orçamentos detalhados, planejamento físico-financeiro, análise de viabilidade, utilização de Excel avançado e Power BI para tomada de decisão.</td>
-          <td>25 meses</td>
+          <td>14 meses</td>
           <td>Construção civil para órgãos públicos e empresas privadas.</td>
         </tr>
         <tr>
           <td>Assistente Comercial</td>
           <td>Elaboração de propostas técnicas e comerciais, suporte administrativo, controle documental e apoio às negociações com fornecedores.</td>
-          <td>12 meses</td>
+          <td>11 meses</td>
           <td>Área da Petrobras – atuação em contratos com empresas públicas e privadas (TAG e NTS).</td>
         </tr>
         <tr>
           <td>Encarregado Administrativo</td>
           <td>Gestão de contratos e compras, controle de almoxarifado, apoio a obras, coordenação de equipe e interface com departamentos contábeis e fiscais.</td>
           <td>35 meses</td>
-          <td>Projetos de saneamento básico com foco em companhias públicas como Sabesp e empresas privadas do setor Logístico.</td>
+          <td>Projetos de saneamento básico com foco em companhias públicas como Sabesp e empresas privadas do setor portuário.</td>
         </tr>
         <tr>
           <td>Líder Administrativo</td>
           <td>Coordenação de equipes multidisciplinares, controle de estoques e planejamento logístico em ambiente de alta demanda, com foco em melhoria contínua.</td>
           <td>84 meses</td>
-          <td>Construção civil em terminais da Petrobras e obras de infraestrutura em terminais de contêineres (segmento misto).</td>
+          <td>Construção civil em terminais da Petrobras e obras de infraestrutura logística portuária (segmento misto).</td>
         </tr>
         <tr>
-          <td>Comprador</td>
+          <td>Almoxarife / Comprador</td>
           <td>Gestão de estoques, controle de recebimentos e inventários, logística de materiais e negociação com fornecedores.</td>
           <td>30 meses</td>
           <td>Área da Petrobras – refinarias e terminais (segmento público e privado).</td>
@@ -180,10 +196,10 @@
   </section>
 
   <section id="curriculo">
-    <h2>Habilidades e Experiência</h2>
+    <h2>Resumo Profissional</h2>
     <p>Evoluí de Auxiliar a Líder Administrativo, transitando entre os níveis operacional, tático e estratégico, com atuação nos setores de construção civil, logística e petróleo e gás. Atuo com orçamentação, planejamento de obras, negociação com fornecedores, gestão de equipes e análise de dados, com foco na otimização de custos e melhoria contínua dos processos.</p>
 
-    <h3>Destaques Profissionais</h3>
+    <h3>Habilidades Profissionais</h3>
     <ul>
       <li>Orçamentação e planejamento estratégico</li>
       <li>Gestão de obras e contratos</li>
@@ -193,7 +209,6 @@
       <li>Administração de equipes</li>
       <li>Excel avançado e Power BI</li>
       <li>Melhoria contínua de processos</li>
-      <li>Linguagem Python e R para análise de dados</li>
       <li>Inteligência artificial aplicada à gestão e projetos</li>
       <li>Inteligência emocional</li>
     </ul>
