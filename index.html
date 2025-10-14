@@ -2,20 +2,71 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resumo de Currículo Profissional – Silvanio Gois</title>
   <style>
+    /* Estilos Gerais */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+      background-color: #f0f2f5; /* Fundo mais suave */
       color: #333;
     }
+    a {
+        color: #1e4970; /* Cor para links, harmoniza com o azul escuro */
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Cabeçalho */
     header {
       background-color: #27628d;
       color: white;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
     }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white; /* Borda branca destacando a foto */
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header h1 {
+        margin: 5px 0 10px 0;
+        font-size: 2.5em;
+    }
+    header p {
+        margin: 5px 0;
+        font-size: 1.1em;
+    }
+    .whatsapp-link {
+        margin-top: 15px;
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #1e4970; /* Azul escuro para o botão de contato */
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .whatsapp-link:hover {
+        background-color: #1a3a5e;
+        text-decoration: none;
+    }
+
+    /* Navegação */
     nav {
       text-align: center;
       background: #e0e0e0;
@@ -23,95 +74,109 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     nav button {
       background-color: #27628d;
       color: white;
       border: none;
-      margin: 0 10px;
-      padding: 10px 20px;
+      margin: 5px 8px; /* Ajuste para melhor espaçamento em telas menores */
+      padding: 8px 15px;
       cursor: pointer;
       border-radius: 4px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.1s;
     }
     nav button:hover {
       background-color: #1e4970;
+      transform: translateY(-2px);
     }
+
+    /* Seções */
     section {
-      padding: 20px;
+      padding: 30px;
       max-width: 1000px;
-      margin: auto;
+      margin: 20px auto;
       background-color: white;
-      margin-top: 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra mais sutil */
     }
     h2 {
       color: #27628d;
-      border-bottom: 2px solid #27628d;
+      border-left: 5px solid #27628d; /* Linha de destaque */
+      padding-left: 10px;
+      margin-top: 0;
       padding-bottom: 5px;
+      font-size: 1.8em;
     }
-    canvas, #timeline {
-      max-width: 100%;
-      margin: auto;
-      display: block;
-    }
+    
+    /* Gráficos e Tabelas */
     .chart-container {
-      width: 100%;
-      overflow-x: auto;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: space-between;
+      justify-content: center;
     }
     .chart-box {
-      flex: 1 1 48%;
-      min-width: 300px;
+      flex: 1 1 calc(50% - 10px); /* Ocupa metade da largura com espaçamento */
+      min-width: 300px; /* Garante que não fique muito pequeno */
     }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 15px;
     }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
     th, td {
-      padding: 10px;
+      border: 1px solid #eee; /* Borda mais clara */
+      padding: 12px 10px;
       text-align: left;
     }
     th {
-      background-color: #f0f0f0;
-    }
-    .contato {
-      text-align: center;
-      margin: 30px 0;
-      font-size: 1.1em;
-    }
-    .contato a {
+      background-color: #f8f8f8;
       color: #27628d;
       font-weight: bold;
-      text-decoration: none;
     }
-    .contato a:hover {
-      text-decoration: underline;
+    
+    /* Contato */
+    .contato {
+      text-align: center;
+      margin: 30px 0 50px 0;
+      font-size: 1.1em;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .chart-box {
+            flex: 1 1 100%; /* Gráficos em linha única em telas menores */
+            min-width: unset;
+        }
+        nav button {
+            display: block;
+            width: 90%;
+            margin: 5px auto;
+        }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Resumo de Currículo Profissional</h1>
-    <p><strong>Objetivo:</strong> Atuar com excelência nas áreas de gestão, inteligência de mercado, logística e planejamento orçamentário, com base em indicadores estratégicos e visão analítica.</p>
-    <p><strong><a href="#contato" style="color: #27628d; font-weight: bold; text-decoration: none;">Entre em contato via <span style="text-decoration: underline;">WhatsApp</span></a></strong></p>
+    <div class="header-content">
+        <img src="SG_Executivo-removebg-preview.png" alt="Foto de Perfil Profissional de Silvanio Gois" class="profile-pic">
+        <h1>Resumo de Currículo Profissional</h1>
+        <p><strong>Silvanio Gois</strong></p>
+        <p><strong>Objetivo:</strong> Atuar com excelência nas áreas de gestão, inteligência de mercado, logística e planejamento orçamentário, com base em indicadores estratégicos e visão analítica.</p>
+        
+        <a href="https://api.whatsapp.com/send/?phone=5513988301094&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-link">Entre em contato via WhatsApp</a>
+    </div>
   </header>
-
+  
   <nav>
+    <button onclick="location.href='#perfil'">Perfil</button>
     <button onclick="location.href='#videoAutoentrevista'">Apresentação</button>
     <button onclick="location.href='#kpis'">KPIs</button>
     <button onclick="location.href='#grafico'">Competências</button>
     <button onclick="location.href='#experiencia'">Experiência</button>
     <button onclick="location.href='#curriculo'">Habilidades</button>
-    <button onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })">Entre em contato</button>
+    <button onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })">Contato</button>
   </nav>
 
   <section id="perfil">
@@ -198,7 +263,6 @@
   <section id="curriculo">
     <h2>Resumo Profissional</h2>
     <p>Evoluí de Auxiliar a Líder Administrativo, transitando entre os níveis operacional, tático e estratégico, com atuação nos setores de construção civil, logística e petróleo e gás. Atuo com orçamentação, planejamento de obras, negociação com fornecedores, gestão de equipes e análise de dados, com foco na otimização de custos e melhoria contínua dos processos.</p>
-
     <h3>Habilidades Profissionais</h3>
     <ul>
       <li>Orçamentação e planejamento estratégico</li>
@@ -215,11 +279,15 @@
   </section>
 
   <div class="contato" id="contato">
-    <p>Dúvidas ou mais informações? <a href="https://wa.me/5513988301094" target="_blank">WhatsApp</a><br>sg@silvaniogois.com.br</p>
+    <p>Dúvidas ou mais informações? <a href="https://api.whatsapp.com/send/?phone=5513988301094&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a><br>sg@silvaniogois.com.br</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+    // Seus scripts de gráfico permanecem os mesmos
+    const primaryColor = '#27628d'; // Cor primária para os gráficos
+    const lightFillColor = 'rgba(39, 98, 141, 0.2)'; // Cor de preenchimento para o gráfico de linha
+
     const ctxBar = document.getElementById('graficoBarras').getContext('2d');
     new Chart(ctxBar, {
       type: 'bar',
@@ -239,7 +307,7 @@
         datasets: [{
           label: 'Horas por Área',
           data: [2300, 1955, 1395, 627, 581, 516, 442, 434, 131, 130],
-          backgroundColor: '#27628d'
+          backgroundColor: primaryColor
         }]
       },
       options: {
@@ -282,8 +350,8 @@
         datasets: [{
           label: 'Cursos realizados por ano',
           data: [23, 16, 1, 17, 46, 34],
-          borderColor: '#27628d',
-          backgroundColor: 'rgba(39, 98, 141, 0.2)',
+          borderColor: primaryColor,
+          backgroundColor: lightFillColor,
           tension: 0.3,
           fill: true
         }]
