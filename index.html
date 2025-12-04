@@ -3,291 +3,750 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resumo de Currículo Profissional – Silvanio Gois</title>
+  <title>Currículo Profissional – Silvanio Gois</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Estilos Gerais */
-    body {
+    /* Reset e Variáveis */
+    :root {
+      --primary-color: #27628d;
+      --primary-dark: #1e4970;
+      --secondary-color: #f0f2f5;
+      --text-color: #333;
+      --light-gray: #e0e0e0;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.05);
+      --border-radius: 8px;
+      --transition: all 0.3s ease;
+    }
+    
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
-      background-color: #f0f2f5; /* Fundo mais suave */
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
     }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
     a {
-        color: #1e4970; /* Cor para links, harmoniza com o azul escuro */
-        text-decoration: none;
-        font-weight: bold;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
     }
+    
     a:hover {
-        text-decoration: underline;
+      text-decoration: underline;
+      color: var(--primary-color);
     }
-
-    /* Cabeçalho */
+    
+    /* Cabeçalho Compacto */
     header {
-      background-color: #27628d;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
+      background: linear-gradient(135deg, var(--primary-color), #1a3a5e);
+      color: var(--white);
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+    
     .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 1000px;
-      margin: auto;
+      text-align: center;
     }
+    
+    .header-main {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+    
     .profile-pic {
-      width: 150px;
-      height: 150px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid white; /* Borda branca destacando a foto */
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 3px solid var(--white);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
     }
-    header h1 {
-        margin: 5px 0 10px 0;
-        font-size: 2.5em;
+    
+    .header-text {
+      flex: 1;
+      text-align: left;
     }
-    header p {
-        margin: 5px 0;
-        font-size: 1.1em;
+    
+    .header-text h1 {
+      font-size: 1.6em;
+      margin-bottom: 5px;
+      color: var(--white);
+      font-weight: 700;
     }
-    .whatsapp-link {
-        margin-top: 15px;
-        display: inline-block;
-        padding: 8px 15px;
-        background-color: #1e4970; /* Azul escuro para o botão de contato */
-        color: white;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+    
+    .header-text .name {
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
     }
-    .whatsapp-link:hover {
-        background-color: #1a3a5e;
-        text-decoration: none;
+    
+    .header-subtitle {
+      display: block;
+      font-size: 1em;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
     }
-
-    /* Navegação */
+    
+    /* Menu Hamburger para Mobile */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5em;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
     nav {
-      text-align: center;
-      background: #e0e0e0;
-      padding: 10px 0;
+      background: var(--white);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav button {
-      background-color: #27628d;
-      color: white;
-      border: none;
-      margin: 5px 8px; /* Ajuste para melhor espaçamento em telas menores */
-      padding: 8px 15px;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, transform 0.1s;
-    }
-    nav button:hover {
-      background-color: #1e4970;
-      transform: translateY(-2px);
-    }
-
-    /* Seções */
-    section {
-      padding: 30px;
-      max-width: 1000px;
-      margin: 20px auto;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra mais sutil */
-    }
-    h2 {
-      color: #27628d;
-      border-left: 5px solid #27628d; /* Linha de destaque */
-      padding-left: 10px;
-      margin-top: 0;
-      padding-bottom: 5px;
-      font-size: 1.8em;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-bottom: 1px solid var(--light-gray);
     }
     
-    /* Gráficos e Tabelas */
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 8px 10px;
+      gap: 5px;
+    }
+    
+    nav button {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: var(--transition);
+      font-size: 0.9em;
+      font-weight: 600;
+      flex-grow: 1;
+      max-width: 130px;
+      min-width: 100px;
+    }
+    
+    nav button:hover {
+      background-color: rgba(39, 98, 141, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    /* Seção Objetivo */
+    .objetivo-section {
+      padding: 25px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+    
+    .objetivo-section h2 {
+      color: var(--primary-color);
+      border-left: 5px solid var(--primary-color);
+      padding-left: 15px;
+      margin-bottom: 15px;
+      font-size: 1.6em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .objetivo-content {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-color);
+      padding: 20px;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      font-size: 1.05em;
+      line-height: 1.7;
+    }
+    
+    /* Seções */
+    section {
+      padding: 25px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      border-left: 5px solid var(--primary-color);
+      padding-left: 15px;
+      margin-bottom: 20px;
+      font-size: 1.6em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    h2 i {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+    
+    h3 {
+      color: var(--primary-dark);
+      margin: 20px 0 15px 0;
+      font-size: 1.3em;
+      padding-left: 10px;
+      border-left: 3px solid rgba(39, 98, 141, 0.3);
+    }
+    
+    ul, ol {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+    
+    li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    
+    /* Gráficos */
     .chart-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
+    
     .chart-box {
-      flex: 1 1 calc(50% - 10px); /* Ocupa metade da largura com espaçamento */
-      min-width: 300px; /* Garante que não fique muito pequeno */
+      flex: 1 1 calc(50% - 10px);
+      min-width: 300px;
     }
+    
+    /* Tabela Responsiva */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 15px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--light-gray);
+    }
+    
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
-    }
-    th, td {
-      border: 1px solid #eee; /* Borda mais clara */
-      padding: 12px 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #f8f8f8;
-      color: #27628d;
-      font-weight: bold;
+      min-width: 600px;
     }
     
-    /* Contato */
-    .contato {
+    th, td {
+      border: 1px solid var(--light-gray);
+      padding: 12px 15px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f8f8f8;
+      color: var(--primary-color);
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    /* Vídeo */
+    .video-container {
+      max-width: 640px;
+      margin: 20px auto;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Rodapé Minimalista */
+    footer {
+      background: #1e4970;
+      color: var(--white);
+      padding: 40px 20px 30px;
+      margin-top: 40px;
       text-align: center;
-      margin: 30px 0 50px 0;
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      margin-bottom: 30px;
+    }
+    
+    .whatsapp-footer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      background-color: #25D366;
+      color: var(--white);
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: var(--transition);
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    
+    .whatsapp-footer-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+    
+    .whatsapp-footer-btn i {
+      font-size: 1.3em;
+    }
+    
+    .email-info {
+      margin-top: 25px;
+      color: rgba(255, 255, 255, 0.9);
       font-size: 1.1em;
     }
-
+    
+    .email-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: var(--border-radius);
+      font-weight: 500;
+    }
+    
+    .email-text i {
+      font-size: 1.2em;
+    }
+    
+    .footer-bottom {
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85em;
+      line-height: 1.5;
+    }
+    
+    /* Botão Voltar ao Topo */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3em;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      border: none;
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .back-to-top:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    
     /* Responsividade */
     @media (max-width: 768px) {
-        .chart-box {
-            flex: 1 1 100%; /* Gráficos em linha única em telas menores */
-            min-width: unset;
-        }
-        nav button {
-            display: block;
-            width: 90%;
-            margin: 5px auto;
-        }
+      header {
+        padding: 15px;
+      }
+      
+      .header-main {
+        gap: 15px;
+      }
+      
+      .profile-pic {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .header-text h1 {
+        font-size: 1.4em;
+      }
+      
+      .header-text .name {
+        font-size: 1.1em;
+      }
+      
+      .menu-toggle {
+        display: block;
+        top: 15px;
+        right: 15px;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        display: none;
+        padding: 10px;
+        gap: 8px;
+        background: var(--white);
+      }
+      
+      .nav-container.active {
+        display: flex;
+      }
+      
+      nav button {
+        max-width: 100%;
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+        font-size: 0.95em;
+      }
+      
+      .objetivo-section, section {
+        padding: 20px;
+        margin: 15px auto;
+      }
+      
+      h2 {
+        font-size: 1.4em;
+      }
+      
+      .chart-box {
+        flex: 1 1 100%;
+        min-width: unset;
+      }
+      
+      .whatsapp-footer-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+      
+      .objetivo-content {
+        padding: 15px;
+        font-size: 1em;
+      }
+      
+      .email-info {
+        font-size: 1em;
+      }
+      
+      .email-text {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px;
+      }
+      
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2em;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .header-main {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      
+      .header-text {
+        text-align: center;
+      }
+      
+      .profile-pic {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .header-text h1 {
+        font-size: 1.3em;
+      }
+      
+      .header-text .name {
+        font-size: 1em;
+      }
+      
+      .header-subtitle {
+        font-size: 0.9em;
+      }
+      
+      .whatsapp-footer-btn {
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+      
+      .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+      }
+    }
+    
+    /* Animações suaves */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Estilo para botões ativos */
+    nav button:active {
+      transform: translateY(0);
+    }
+    
+    /* Melhorias visuais para seções */
+    .objetivo-section, section {
+      transition: var(--transition);
+    }
+    
+    .objetivo-section:hover, section:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
   <header>
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    
     <div class="header-content">
-        <img src="SG_Executivo-removebg-preview.png" alt="Foto de Perfil Profissional de Silvanio Gois" class="profile-pic">
-        <h1>Resumo de Currículo Profissional</h1>
-        <p><strong>Silvanio Gois</strong></p>
-        <p><strong>Objetivo:</strong> Atuar com excelência nas áreas de gestão, inteligência de mercado, logística e planejamento orçamentário, com base em indicadores estratégicos e visão analítica.</p>
-        
-        <a href="https://api.whatsapp.com/send/?phone=5513988301094&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-link">Entre em contato via WhatsApp</a>
+      <div class="header-main">
+        <img src="SG_Executivo-removebg-preview.png" alt="Foto de Perfil - Silvanio Gois" class="profile-pic">
+        <div class="header-text">
+          <h1>Resumo de Currículo Profissional</h1>
+          <div class="name">Silvanio Gois</div>
+          <span class="header-subtitle">Gestão | Inteligência de Mercado | Planejamento Estratégico</span>
+        </div>
+      </div>
     </div>
   </header>
   
   <nav>
-    <button onclick="location.href='#perfil'">Perfil</button>
-    <button onclick="location.href='#videoAutoentrevista'">Apresentação</button>
-    <button onclick="location.href='#kpis'">KPIs</button>
-    <button onclick="location.href='#grafico'">Competências</button>
-    <button onclick="location.href='#experiencia'">Experiência</button>
-    <button onclick="location.href='#curriculo'">Habilidades</button>
-    <button onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })">Contato</button>
+    <div class="nav-container" id="navContainer">
+      <button onclick="location.href='#objetivo'"><i class="fas fa-bullseye"></i> Objetivo</button>
+      <button onclick="location.href='#perfil'"><i class="fas fa-user"></i> Perfil</button>
+      <button onclick="location.href='#videoAutoentrevista'"><i class="fas fa-video"></i> Apresentação</button>
+      <button onclick="location.href='#kpis'"><i class="fas fa-chart-line"></i> KPIs</button>
+      <button onclick="location.href='#grafico'"><i class="fas fa-chart-bar"></i> Competências</button>
+      <button onclick="location.href='#experiencia'"><i class="fas fa-briefcase"></i> Experiência</button>
+      <button onclick="location.href='#curriculo'"><i class="fas fa-star"></i> Habilidades</button>
+      <button onclick="document.getElementById('contato').scrollIntoView({ behavior: 'smooth' })"><i class="fas fa-address-card"></i> Contato</button>
+    </div>
   </nav>
 
-  <section id="perfil">
-    <h2>Perfil Profissional</h2>
-    <p>Gestor com sólida trajetória em Administração Contratual e Planejamento Estratégico, com atuação consolidada em setores de alta complexidade (Construção Civil, Logística e Oil & Gas). Carreira desenvolvida com ascensão consistente de funções técnicas para liderança tática, com foco em engenharia de custos, procurement e gestão de equipes multidisciplinares. Especialista na transformação de dados em inteligência de negócio (Business Intelligence), utilizando ferramentas digitais para maximizar a eficiência operacional e a rentabilidade dos projetos.</p>
-  </section>
-
-  <section id="videoAutoentrevista" style="max-width: 640px; margin: 30px auto; text-align: center;">
-    <h2>Apresentação</h2>
-    <video width="100%" height="360" controls>
-      <source src="videoAutoentrevista.mp4" type="video/mp4" />
-      Seu navegador não suporta a reprodução de vídeo.
-    </video>
-  </section>
-
-  <section id="kpis">
-    <h2>Indicadores Gerais (KPIs)</h2>
-    <ul>
-      <li><strong>Lifelong Learning & Development:</strong> +8.500 horas dedicadas à especialização técnica e gerencial.</li>
-      <li><strong>Áreas com maior carga:</strong> Gestão e Negócios, Orçamentação e Planejamento, Business Intelligence</li>
-      <li><strong>Certificações Técnicas:</strong> Edificações, Administração, em andamento Processos Gerenciais</li>
-      <li><strong>Destaques:</strong> Especialização concentrada em Gestão de Negócios e Engenharia de Custos.</li>
-    </ul>
-  </section>
-
-  <section id="grafico">
-    <h2>Distribuição de Horas por Categorias e Quantidade de Cursos Realizados por Ano</h2>
-    <div class="chart-container">
-      <div class="chart-box">
-        <canvas id="graficoBarras" height="300"></canvas>
-      </div>
-      <div class="chart-box">
-        <canvas id="graficoTemporal" height="300"></canvas>
+  <main>
+    <div class="objetivo-section" id="objetivo">
+      <h2><i class="fas fa-bullseye"></i> Objetivo Profissional</h2>
+      <div class="objetivo-content">
+        Atuar com excelência nas áreas de gestão, inteligência de mercado, logística e planejamento orçamentário, com base em indicadores estratégicos e visão analítica.
       </div>
     </div>
-  </section>
 
-  <section id="experiencia">
-    <h2>Experiência Profissional</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Setor</th>
-          <th>Competências Estratégicas</th>
-          <th>Periodo</th>
-          <th>Segmento</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Orçamentação e Planejamento</td>
-          <td>Engenharia de Custos e Análise de Viabilidade: Gestão integral do ciclo físico-financeiro de projetos. Aplicação de Business Intelligence (Power BI) para modelagem de cenários, mitigação de riscos orçamentários e suporte estratégico à decisão executiva.</td>
-          <td>14 meses</td>
-          <td>Construção Civil (B2G e B2B).</td>
-        </tr>
-        <tr>
-          <td>Comercial</td>
-          <td>Gestão de Propostas (Bid Management) e Inteligência Comercial: Elaboração estratégica de propostas técnicas para o setor de Oil & Gas. Gestão de Compliance contratual e documental, atuando como ponto focal em negociações complexas com stakeholders públicos e privados.</td>
-          <td>11 meses</td>
-          <td>Óleo e Gás (Petrobras, TAG, NTS).</td>
-        </tr>
-        <tr>
-          <td>Gestor Administrativo</td>
-          <td>Gestão de Contratos e Controladoria de Obras: Liderança na gestão de procurement e cadeia de suprimentos local. Interface estratégica entre operação e departamentos fiscais/contábeis, garantindo a eficiência alocativa de recursos em projetos de infraestrutura crítica.</td>
-          <td>35 meses</td>
-          <td>Saneamento (Sabesp) e Infraestrutura Logística.</td>
-        </tr>
-        <tr>
-          <td>Liderança Administrativa</td>
-          <td>Liderança de Equipes e Excelência Operacional: Coordenação de times multidisciplinares em ambientes de alta complexidade e periculosidade. Gestão logística integrada com foco em Melhoria Contínua e otimização de fluxos de trabalho em terminais industriais.</td>
-          <td>84 meses</td>
-          <td>Petrobras e Infraestrutura Logística.</td>
-        </tr>
-        <tr>
-          <td>Suprimentos</td>
-          <td>Gestão de Cadeia de Suprimentos (Supply Chain) e Estoques: Controle estratégico de Inbound Logistics, inventários de alta precisão e gestão de ativos. Atuação focada na garantia de disponibilidade de materiais críticos para operação contínua de refinarias e terminais.</td>
-          <td>30 meses</td>
-          <td>Petrobras (Refinarias e Terminais).</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <section id="perfil">
+      <h2><i class="fas fa-user-tie"></i> Perfil Profissional</h2>
+      <p>Gestor com sólida trajetória em Administração Contratual e Planejamento Estratégico, com atuação consolidada em setores de alta complexidade (Construção Civil, Logística e Oil & Gas). Carreira desenvolvida com ascensão consistente de funções técnicas para liderança tática, com foco em engenharia de custos, procurement e gestão de equipes multidisciplinares. Especialista na transformação de dados em inteligência de negócio (Business Intelligence), utilizando ferramentas digitais para maximizar a eficiência operacional e a rentabilidade dos projetos.</p>
+    </section>
 
-  <section id="curriculo">
-    <h2>Resumo Profissional</h2>
-    <p>Profissional com trajetória ascendente, evoluindo de funções operacionais para Liderança Administrativa, com visão integrada dos níveis operacional, tático e estratégico. Sólida atuação nos setores de construção civil, logística e Oil & Gas. Especialista em orçamentação, planejamento de obras e Gestão de Stakeholders, utilizando Inteligência de Dados (BI) para a otimização de custos e a melhoria contínua de processos.</p>
-    <h3>Habilidades Profissionais</h3>
-    <ul>
-      <li>Orçamentação e planejamento estratégico</li>
-      <li>Gestão de obras e contratos</li>
-      <li>Business Intelligence (BI)</li>
-      <li>Negociação com fornecedores</li>
-      <li>Gestão de estoques e logística</li>
-      <li>Administração de equipes</li>
-      <li>Uso de ferramentas digitais para eficiência da produtividade</li>
-      <li>Melhoria contínua de processos</li>
-      <li>Inteligência artificial aplicada à gestão e projetos</li>
-      <li>Inteligência emocional</li>
-    </ul>
-  </section>
+    <section id="videoAutoentrevista">
+      <h2><i class="fas fa-video"></i> Apresentação em Vídeo</h2>
+      <div class="video-container">
+        <video controls poster="https://via.placeholder.com/640x360/27628d/ffffff?text=Video+de+Apresenta%C3%A7%C3%A3o">
+          <source src="videoAutoentrevista.mp4" type="video/mp4" />
+          Seu navegador não suporta a reprodução de vídeo.
+        </video>
+      </div>
+    </section>
 
-  <div class="contato" id="contato">
-    <p>Dúvidas ou mais informações? <a href="https://api.whatsapp.com/send/?phone=5513988301094&text&type=phone_number&app_absent=0" target="_blank">WhatsApp</a><br>sg@silvaniogois.com.br</p>
-  </div>
+    <section id="kpis">
+      <h2><i class="fas fa-chart-line"></i> Indicadores Gerais (KPIs)</h2>
+      <ul>
+        <li><strong>Lifelong Learning & Development:</strong> +8.500 horas dedicadas à especialização técnica e gerencial.</li>
+        <li><strong>Áreas com maior carga:</strong> Gestão e Negócios, Orçamentação e Planejamento, Business Intelligence</li>
+        <li><strong>Certificações Técnicas:</strong> Edificações, Administração, em andamento Processos Gerenciais</li>
+        <li><strong>Destaques:</strong> Especialização concentrada em Gestão de Negócios e Engenharia de Custos.</li>
+      </ul>
+    </section>
+
+    <section id="grafico">
+      <h2><i class="fas fa-chart-pie"></i> Distribuição de Competências</h2>
+      <div class="chart-container">
+        <div class="chart-box">
+          <canvas id="graficoBarras" height="300"></canvas>
+        </div>
+        <div class="chart-box">
+          <canvas id="graficoTemporal" height="300"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <h2><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Setor</th>
+              <th>Competências Estratégicas</th>
+              <th>Periodo</th>
+              <th>Segmento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Orçamentação e Planejamento</td>
+              <td>Engenharia de Custos e Análise de Viabilidade: Gestão integral do ciclo físico-financeiro de projetos. Aplicação de Business Intelligence (Power BI) para modelagem de cenários, mitigação de riscos orçamentários e suporte estratégico à decisão executiva.</td>
+              <td>14 meses</td>
+              <td>Construção Civil (B2G e B2B).</td>
+            </tr>
+            <tr>
+              <td>Comercial</td>
+              <td>Gestão de Propostas (Bid Management) e Inteligência Comercial: Elaboração estratégica de propostas técnicas para o setor de Oil & Gas. Gestão de Compliance contratual e documental, atuando como ponto focal em negociações complexas com stakeholders públicos e privados.</td>
+              <td>11 meses</td>
+              <td>Óleo e Gás (Petrobras, TAG, NTS).</td>
+            </tr>
+            <tr>
+              <td>Gestor Administrativo</td>
+              <td>Gestão de Contratos e Controladoria de Obras: Liderança na gestão de procurement e cadeia de suprimentos local. Interface estratégica entre operação e departamentos fiscais/contábeis, garantindo a eficiência alocativa de recursos em projetos de infraestrutura crítica.</td>
+              <td>35 meses</td>
+              <td>Saneamento (Sabesp) e Infraestrutura Logística.</td>
+            </tr>
+            <tr>
+              <td>Liderança Administrativa</td>
+              <td>Liderança de Equipes e Excelência Operacional: Coordenação de times multidisciplinares em ambientes de alta complexidade e periculosidade. Gestão logística integrada com foco em Melhoria Contínua e otimização de fluxos de trabalho em terminais industriais.</td>
+              <td>84 meses</td>
+              <td>Petrobras e Infraestrutura Logística.</td>
+            </tr>
+            <tr>
+              <td>Suprimentos</td>
+              <td>Gestão de Cadeia de Suprimentos (Supply Chain) e Estoques: Controle estratégico de Inbound Logistics, inventários de alta precisão e gestão de ativos. Atuação focada na garantia de disponibilidade de materiais críticos para operação contínua de refinarias e terminais.</td>
+              <td>30 meses</td>
+              <td>Petrobras (Refinarias e Terminais).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="curriculo">
+      <h2><i class="fas fa-star"></i> Resumo Profissional e Habilidades</h2>
+      <p>Profissional com trajetória ascendente, evoluindo de funções operacionais para Liderança Administrativa, com visão integrada dos níveis operacional, tático e estratégico. Sólida atuação nos setores de construção civil, logística e Oil & Gas. Especialista em orçamentação, planejamento de obras e Gestão de Stakeholders, utilizando Inteligência de Dados (BI) para a otimização de custos e a melhoria contínua de processos.</p>
+      
+      <h3>Habilidades Técnicas e Comportamentais</h3>
+      <ul>
+        <li><strong>Gestão Estratégica:</strong> Orçamentação e planejamento estratégico, Business Intelligence (BI), gestão de obras e contratos</li>
+        <li><strong>Operações:</strong> Negociação com fornecedores, gestão de estoques e logística, melhoria contínua de processos</li>
+        <li><strong>Liderança:</strong> Administração de equipes, inteligência emocional, gestão de stakeholders</li>
+        <li><strong>Tecnologia:</strong> Uso de ferramentas digitais para eficiência da produtividade, inteligência artificial aplicada à gestão e projetos</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="footer-content">
+      <div class="contact-info">
+        <a href="https://api.whatsapp.com/send/?phone=5513988301094&text&type=phone_number&app_absent=0" target="_blank" class="whatsapp-footer-btn">
+          <i class="fab fa-whatsapp"></i> Contato
+        </a>
+        
+        <div class="email-info">
+          <div class="email-text">
+            <i class="fas fa-envelope"></i>
+            <span>sg@silvaniogois.com.br</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2023 Silvanio Gois. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Voltar ao Topo -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    // Seus scripts de gráfico permanecem os mesmos
-    const primaryColor = '#27628d'; // Cor primária para os gráficos
-    const lightFillColor = 'rgba(39, 98, 141, 0.2)'; // Cor de preenchimento para o gráfico de linha
+    // Menu Hamburger para mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navContainer = document.getElementById('navContainer');
+    
+    menuToggle.addEventListener('click', () => {
+      navContainer.classList.toggle('active');
+      menuToggle.innerHTML = navContainer.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Fechar menu ao clicar em um link (para mobile)
+    document.querySelectorAll('nav button').forEach(button => {
+      button.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          navContainer.classList.remove('active');
+          menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+    });
+    
+    // Gráficos
+    const primaryColor = '#27628d';
+    const lightFillColor = 'rgba(39, 98, 141, 0.2)';
 
+    // Gráfico de Barras
     const ctxBar = document.getElementById('graficoBarras').getContext('2d');
     new Chart(ctxBar, {
       type: 'bar',
@@ -307,11 +766,13 @@
         datasets: [{
           label: 'Horas por Área',
           data: [2300, 1967, 1395, 627, 602, 516, 442, 434, 131, 138],
-          backgroundColor: primaryColor
+          backgroundColor: primaryColor,
+          borderRadius: 5,
         }]
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
           tooltip: {
@@ -323,7 +784,7 @@
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: 'Horas' }
+            title: { display: true, text: 'Horas de Estudo/Prática' }
           },
           x: {
             title: { display: true, text: 'Área de Conhecimento' },
@@ -331,10 +792,12 @@
               autoSkip: false,
               maxRotation: 45,
               minRotation: 45,
-              font: { size: 10 },
+              font: { size: window.innerWidth <= 768 ? 9 : 10 },
               callback: function(value) {
                 const label = this.getLabelForValue(value);
-                return label.length > 20 ? label.slice(0, 20) + '…' : label;
+                return window.innerWidth <= 480 
+                  ? (label.length > 12 ? label.slice(0, 12) + '…' : label)
+                  : (label.length > 20 ? label.slice(0, 20) + '…' : label);
               }
             }
           }
@@ -342,6 +805,7 @@
       }
     });
 
+    // Gráfico de Linha
     const ctxLine = document.getElementById('graficoTemporal').getContext('2d');
     new Chart(ctxLine, {
       type: 'line',
@@ -352,22 +816,55 @@
           data: [23, 16, 1, 17, 46, 34],
           borderColor: primaryColor,
           backgroundColor: lightFillColor,
+          borderWidth: 3,
           tension: 0.3,
-          fill: true
+          fill: true,
+          pointBackgroundColor: primaryColor,
+          pointRadius: 5,
+          pointHoverRadius: 8
         }]
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           y: {
             beginAtZero: true,
-            title: { display: true, text: 'Cursos realizados' }
+            title: { display: true, text: 'Quantidade de Cursos' }
           },
           x: {
             title: { display: true, text: 'Ano' }
           }
         }
       }
+    });
+    
+    // Ajustar gráficos ao redimensionar janela
+    window.addEventListener('resize', function() {
+      setTimeout(() => {
+        ctxBar.canvas.style.width = '100%';
+        ctxLine.canvas.style.width = '100%';
+      }, 100);
+    });
+    
+    // Botão Voltar ao Topo
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Mostrar/ocultar botão quando rolar a página
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    // Rolar para o topo quando clicar no botão
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   </script>
 </body>
